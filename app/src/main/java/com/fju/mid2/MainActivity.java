@@ -1,45 +1,74 @@
 package com.fju.mid2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Toast;
+
+
 
 public class MainActivity extends AppCompatActivity {
+    public static final int FUNC_LOGIN=1;
+    boolean login = true;
 
-
-
-private Button bfunction1;
-    private Button bfunction2;
-    private Button bfunction3;
-    private Button bfunction4;
-    private Button bfunction5;
-    private Button bfunction6;
-    private Button bfunction7;
-
-    private Button bfunction8;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button bfunction1 = (Button) findViewById(R.id.b_funcion1);
-        Button bfunction2 = (Button) findViewById(R.id.b_function2);
-        Button bfunction3 = (Button) findViewById(R.id.b_function3);
-
-        Button bfunction4 = (Button) findViewById(R.id.b_function4);
-        Button bfunction5 = (Button) findViewById(R.id.b_function5);
-        Button bfunction6 = (Button) findViewById(R.id.b_function6);
-        Button bfunction7 = (Button) findViewById(R.id.b_function7);
-        Button bfunction8 = (Button) findViewById(R.id.b_function8);
-
     }
-    public void login(View view){
-        EditText bfunction = findViewById(R.id.b_function3);
 
-
+    public void f1 (View view) {
+        Intent intent = new Intent(this, Func1Activity.class);
+        startActivity(intent);
     }
+public void f2 (View view) {
+        Intent intent = new Intent(this,Func2Activity.class);
+        startActivity(intent);
+    ]
+    public void f3(View view){
+        Intent intent1 = new Intent(this, Func3Activity.class);
+        startActivityForResult(intent, FUNC_LOGIN);
+        login = false;
+        if (login = false) {
+            Toast.makeText(MainActivity.this, "特殊功能", Toast.LENGTH_LONG).show();
+            login = true;
+        }
+
 }
+}
+
+public void f4(View view) {
+    Intent intent = new Intent(this, Func4Activity.class);
+    startActivity(intent);
+}
+public void f5(View view) {
+    Intent intent = new Intent(this, Func5Activity.class);
+    startActivity(intent);
+}
+public void f6(View view) {
+    Intent intent = new Intent(this, Func6Activity.class);
+    startActivity(intent);
+}
+public void f7(View view) {
+        Intent intent = new Intent(this,Func7Activity.class);
+        startActivityForResult(intent,FUNC_LOGIN);
+        login=false;
+        if(login=false) {
+            Toast.makeText(MainActivity.this, "特殊功能", Toast.LENGTH_LONG).show();
+            login = true;
+
+        }
+        }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode== FUNC_LOGIN){
+
+            Toast.makeText(MainActivity.this,"特殊功能",Toast.LENGTH_LONG).show();
+        }
+}}
+
 
